@@ -1,7 +1,20 @@
-import React from 'react';
+"use client";
+
+import React, {useState} from 'react';
 import { FcGoogle } from "react-icons/fc";
+import SignUpModal from "@/components/Modals/SignUp";
 
 export const Login = () => {
+    const [modalOpen,setModalOpen] = useState<boolean>(false);
+
+    const handleOpenModal = ()=> {
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = ()=> {
+        setModalOpen(false);
+    };
+
     return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center">
             <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
@@ -92,12 +105,14 @@ export const Login = () => {
                     Don’t have an account?{' '}
                     <a
                         href="#"
+                        onClick={handleOpenModal}
                         className="text-blue-600 hover:underline"
                     >
                         Sign up
                     </a>
                 </p>
             </div>
+            <div>{modalOpen && <SignUpModal closeModal={handleCloseModal}/>}</div>
         </div>
     );
 };
