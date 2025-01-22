@@ -11,7 +11,7 @@ export default function SignUpModal({closeModal}:ModalProps){
 
     return (
 
-                <div className="fixed inset-0 bg-gray-900/50 flex items-center justify-center z-50">
+                <div className="fixed inset-0 bg-gray-900/50 flex items-center justify-center z-50 text-zinc-700">
                     <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-8 relative">
                         <h2 className="text-2xl font-bold mb-4">Create Your Account</h2>
                         <p className="text-gray-600 mb-6">Sign up to get started with our services.</p>
